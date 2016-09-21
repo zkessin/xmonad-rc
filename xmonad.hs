@@ -137,11 +137,11 @@ defaultLayouts = smartBorders(avoidStruts(
   -- the available space. Remaining windows tile to both the left and
   -- right of the master window. You can resize using "super-h" and
   -- "super-l".
-  -- ||| ThreeColMid 1 (3/100) (3/4)
+  ||| ThreeColMid 1 (3/100) (3/4)
 
   -- Circle layout places the master window in the center of the screen.
   -- Remaining windows appear in a circle around it
-  -- ||| Circle
+  ||| Circle
 
   -- Grid layout tries to equally distribute windows in the available
   -- space, increasing the number of columns and rows as necessary.
@@ -259,16 +259,16 @@ myKeyBindings =
 
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
-  resource =? "synapse" --> doIgnore
-  , resource =? "stalonetray" --> doIgnore
-  , className =? "rdesktop" --> doFloat
-  , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
+  resource     =? "synapse"                                        --> doIgnore
+  , resource   =? "stalonetray"                                    --> doIgnore
+  , className  =? "rdesktop"                                       --> doFloat
+  , (className =? "Komodo IDE")                                    --> doF (W.shift "5:Dev")
+  , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2")    --> doFloat
   , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
-  , (className =? "Empathy") --> doF (W.shift "7:Chat")
-  , (className =? "Pidgin") --> doF (W.shift "7:Chat")
-  , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
+  , (className =? "Komodo IDE" <&&> resource =? "Toplevel")        --> doFloat
+  , (className =? "Empathy")                                       --> doF (W.shift "7:Chat")
+  , (className =? "Pidgin")                                        --> doF (W.shift "7:Chat")
+  , (className =? "Gimp-2.8")                                      --> doF (W.shift "9:Pix")
   ]
 
 
